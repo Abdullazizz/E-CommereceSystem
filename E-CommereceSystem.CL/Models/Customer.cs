@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace E_CommereceSystem.CL.Models
+﻿namespace E_CommereceSystem.CL.Models
 {
     public class Customer
     {
-        public Customer(string name, string address, double balance, string mobileNumber )
+        public Customer(string name, string address, double balance, string mobileNumber)
         {
-            if (string.IsNullOrEmpty(name)){
+            if (string.IsNullOrEmpty(name))
+            {
                 throw new ArgumentNullException("Please eneter a valid name.");
             }
             if (string.IsNullOrEmpty(address))
@@ -18,12 +13,13 @@ namespace E_CommereceSystem.CL.Models
                 throw new ArgumentNullException("Please enter a valid address.");
 
             }
-            if(balance < 0)
+            if (balance < 0)
             {
                 throw new ArgumentException("Please enter a postivie balance.");
 
             }
-            if(string.IsNullOrEmpty(mobileNumber) || mobileNumber.Length < 11) {
+            if (string.IsNullOrEmpty(mobileNumber) || mobileNumber.Length < 11)
+            {
                 throw new ArgumentException("please enter a valid egyptian number.");
             }
             Name = name;

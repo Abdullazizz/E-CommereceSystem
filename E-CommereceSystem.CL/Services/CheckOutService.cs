@@ -1,9 +1,4 @@
 ﻿using E_CommereceSystem.CL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace E_CommereceSystem.CL.Services
 {
@@ -12,7 +7,7 @@ namespace E_CommereceSystem.CL.Services
 
         // Customer.
         private readonly ShipmentService _shipmentService;
-        public CheckOutService(ShipmentService shipmentService )
+        public CheckOutService(ShipmentService shipmentService)
         {
             _shipmentService = shipmentService;
 
@@ -49,13 +44,13 @@ namespace E_CommereceSystem.CL.Services
             for (int i = 0; i < customer.Cart.products.Count; i++)
             {
                 Console.Write(customer.Cart.products[i].quantity + "x ");
-                Console.WriteLine(customer.Cart.products[i].product.Name + "  " + customer.Cart.products[i].product.Price * customer.Cart.products[i].quantity+ "$");
+                Console.WriteLine(customer.Cart.products[i].product.Name + "  " + customer.Cart.products[i].product.Price * customer.Cart.products[i].quantity + "$");
 
             }
             Console.WriteLine("\n***************");
             Console.WriteLine("Subtotal = " + subtotal + "$");
             Console.WriteLine("Shipping = " + ShippingFees + "$");
-            Console.WriteLine("Amount = " + (subtotal + ShippingFees ) + "$");
+            Console.WriteLine("Amount = " + (subtotal + ShippingFees) + "$");
         }
     }
 }

@@ -18,13 +18,13 @@
             {
                 if (products[i].product.ID == product.ID)
                 {
-                    if(products[i].quantity + quantity > product.Quantity)
+                    if (products[i].quantity + quantity > product.Quantity)
                     {
                         throw new ArgumentException("The required quantity is unavailable.");
 
                     }
                     products[i] = (product, products[i].quantity + quantity);
-                    
+
                     return;
                 }
             }
